@@ -1,18 +1,18 @@
 package org.example;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Getter//게터
-@Setter//세터
+@Getter
+@Setter
 @NoArgsConstructor//기본생성자
+@AllArgsConstructor
+@RequiredArgsConstructor//@NonNull이 붙어있는 것만(value1만 받는 생성자)
 class MyClass implements Serializable{
-    private String value1;
+    @NonNull private String value1;
     private String value2;
+    private String value3;
 
 
 }
