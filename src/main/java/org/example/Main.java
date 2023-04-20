@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.io.Serializable;
 
+/*
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +18,14 @@ class MyClass implements Serializable{
     @ToString.Exclude private String value3;
 
 
+}
+*/
+
+@Data
+class MyClass implements Serializable{
+    private String value1;
+    private Integer value2;
+    @ToString.Exclude private String value3;
 }
 
 //class MyClass implements Serializable {3
@@ -44,8 +53,8 @@ class MyClass implements Serializable{
 
 public class Main {
     public static void main(String[] args) {
-        MyClass mc = new MyClass("value1", 1000, "value3");
-        System.out.println(mc.toString());
+//        MyClass mc = new MyClass("value1", 1000, "value3");
+//        System.out.println(mc.toString());
 
     }
 }
