@@ -10,8 +10,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @RequiredArgsConstructor//@NonNull이 붙어있는 것만(value1만 받는 생성자)
 class MyClass implements Serializable{
-    @NonNull private String value1;
-    private String value2;
+    private final String value1;
+    private final Integer value2;
     private String value3;
 
 
