@@ -6,24 +6,26 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@NoArgsConstructor//기본생성자
+@NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor//@NonNull이 붙어있는 것만(value1만 받는 생성자)
+//@RequiredArgsConstructor
+@ToString
+@EqualsAndHashCode
 class MyClass implements Serializable{
-    private final String value1;
-    private final Integer value2;
-    private String value3;
+    private String value1;
+    private Integer value2;
+    @ToString.Exclude private String value3;
 
 
 }
 
-//class MyClass implements Serializable {//3번 조건
-//    private String value1;//1번 조건
+//class MyClass implements Serializable {3
+//    private String value1;//1
 //    private String value2;
 //
-//    public MyClass(){}//2번 조건
+//    public MyClass(){}//2
 //
-//    public String getValue1() {//1번 조건
+//    public String getValue1() {//1
 //        return value1;
 //    }
 //
@@ -42,6 +44,8 @@ class MyClass implements Serializable{
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MyClass mc = new MyClass("value1", 1000, "value3");
+        System.out.println(mc.toString());
+
     }
 }
