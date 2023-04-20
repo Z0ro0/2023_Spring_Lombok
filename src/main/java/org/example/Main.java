@@ -21,8 +21,9 @@ class MyClass implements Serializable{
 }
 */
 
+@Builder
 @Data
-@NoArgsConstructor @RequiredArgsConstructor
+@NoArgsConstructor @RequiredArgsConstructor @AllArgsConstructor
 class MyClass implements Serializable{
     private String value1;
     private Integer value2;
@@ -57,5 +58,11 @@ public class Main {
 //        MyClass mc = new MyClass("value1", 1000, "value3");
 //        System.out.println(mc.toString());
 
+        MyClass mc =
+                MyClass.builder()
+                        .value1("hello")
+                        .value2(1000)
+                        .value3("world")
+                        .build();
     }
 }
