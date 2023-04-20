@@ -22,6 +22,7 @@ class MyClass implements Serializable{
 */
 
 @Data
+@NoArgsConstructor @RequiredArgsConstructor
 class MyClass implements Serializable{
     private String value1;
     private Integer value2;
